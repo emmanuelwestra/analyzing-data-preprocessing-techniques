@@ -1,0 +1,13 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+results/
+data/raw/
+/tmp
+Analyzing Performance of Data Preprocessing Techniques on CPUs vs. GPUs with and Without the MapReduce Environment .pdf

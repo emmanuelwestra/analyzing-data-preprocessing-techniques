@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zeek-preprocessing-reproduction"
+version = "0.1.0"
+description = "Local CPU reproduction of the UWF Zeek SVM, PCA, and LDA preprocessing study"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "matplotlib==3.9.2",
+  "numpy==1.26.4",
+  "pandas==2.2.3",
+  "pyarrow==17.0.0",
+  "pyspark==3.5.8",
+  "scikit-learn==1.5.2",
+  "seaborn==0.13.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.3"]
+
+[project.scripts]
+zeek-repro = "zeek_repro.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+markers = ["integration: requires a local Spark/Java runtime"]
