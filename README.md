@@ -10,6 +10,11 @@ The implementation does **not** claim to reproduce the paper's NVIDIA GPU or
 distributed Hadoop/MapReduce timings. This repository targets an Apple Silicon Mac
 and labels all timings as local CPU measurements.
 
+The paper contains contradictory statements, apparent table and caption errors, and
+method details that cannot be recovered from the publication. See
+[`PAPER_INCONSISTENCIES.md`](PAPER_INCONSISTENCIES.md) for the complete audit and every
+assumption made by this reproduction.
+
 ## Study data
 
 Only these directories are used by default:
@@ -278,10 +283,11 @@ zeek-repro run --stage all --profile full --method paper-compatible --repetition
 zeek-repro run --stage all --profile full --method corrected --repetitions 1 --no-warmup
 ```
 
-Exact equality with the paper is not expected because its source code and some
-protocol details were not published. The comparison report quantifies every match,
-exclusion, missing result, and hardware-limited timing instead of silently resolving
-ambiguities in whichever direction scores better.
+Exact equality with the paper is not expected because its source code and important
+protocol details were not published. The complete list is maintained in
+[`PAPER_INCONSISTENCIES.md`](PAPER_INCONSISTENCIES.md). The comparison report quantifies
+every match, exclusion, missing result, and hardware-limited timing instead of silently
+resolving ambiguities in whichever direction scores better.
 
 ## Base paper
 
